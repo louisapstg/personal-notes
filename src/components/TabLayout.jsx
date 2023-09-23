@@ -5,6 +5,7 @@ const TabLayout = ({ archivedNote, activeNote, handleArchive, deleteNotes, searc
 	return (
 		<div className="tab">
 			<Tab
+				content={"Catatan Aktif"}
 				note={activeNote}
 				deleteNotes={deleteNotes}
 				handleArchive={handleArchive}
@@ -13,6 +14,7 @@ const TabLayout = ({ archivedNote, activeNote, handleArchive, deleteNotes, searc
 				searchResult={searchResult}
 			/>
 			<Tab
+				content={"Arsip Catatan"}
 				note={archivedNote}
 				deleteNotes={deleteNotes}
 				handleArchive={handleArchive}

@@ -3,10 +3,10 @@ import CardList from "./CardList";
 import Empty from "./Empty";
 import Header from "./header";
 
-const Tab = ({ note, deleteNotes, handleArchive, tab, container, searchResult }) => {
+const Tab = ({ note, deleteNotes, handleArchive, tab, container, searchResult, content }) => {
 	return (
 		<div className={tab}>
-			<Header>Catatan Aktif</Header>
+			<Header>{content}</Header>
 			{note.length > 0 ? (
 				<CardList
 					deleteNotes={deleteNotes}
