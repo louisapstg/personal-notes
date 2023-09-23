@@ -1,8 +1,10 @@
-// eslint-disable-next-line react/prop-types
-const Button = ({ children, color }) => {
+/* eslint-disable react/prop-types */
+const Button = ({ children, color, handle, data }) => {
 	return (
 		<>
-			<button style={{ backgroundColor: color }}>{children}</button>
+			<button style={{ backgroundColor: color }} onClick={() => handle(data.id)}>
+				{children}
+			</button>
 		</>
 	);
 };
