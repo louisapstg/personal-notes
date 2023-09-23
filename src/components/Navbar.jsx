@@ -1,5 +1,5 @@
-import Button from "./Button";
-const Navbar = () => {
+/* eslint-disable react/prop-types */
+const Navbar = ({ handleSearchChange, search }) => {
 	return (
 		<div className="navbar">
 			<div className="title">
@@ -7,8 +7,13 @@ const Navbar = () => {
 			</div>
 			<div>
 				<form action="" className="container">
-					<input type="text" placeholder="Cari Catatan..." name="search" />
-					<Button color={"#caf0f8"}>🔍</Button>
+					<input
+						type="text"
+						placeholder="Cari Catatan..."
+						name="search"
+						value={search}
+						onChange={handleSearchChange}
+					/>
 				</form>
 			</div>
 		</div>
