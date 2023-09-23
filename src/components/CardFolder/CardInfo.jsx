@@ -1,13 +1,13 @@
-const CardInfo = () => {
+import { showFormattedDate } from "../../utils";
+
+/* eslint-disable react/prop-types */
+const CardInfo = ({ data }) => {
+	const date = showFormattedDate(data.createdAt);
 	return (
 		<div className="card-info">
-			<div className="card-title">Card Title</div>
-			<div className="card-date">Kamis, 21 September 2023</div>
-			<div className="card-note">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio iusto, expedita
-				maiores corrupti ea debitis facere reiciendis aliquid, mollitia at distinctio
-				pariatur ipsum, facilis inventore error fugiat consequatur delectus bland.
-			</div>
+			<div className="card-title">{data.title}</div>
+			<div className="card-date">{date}</div>
+			<div className="card-note">{data.body}</div>
 		</div>
 	);
 };
