@@ -4,9 +4,10 @@ import Form from "./Form";
 import TabLayout from "./TabLayout.jsx";
 
 const Body = ({ datas, setDatas, searchResult }) => {
-	const archivedNote = datas.filter((item) => item.archived);
-
 	const activeNote = datas.filter((item) => !item.archived);
+	const archivedNote = datas.filter((item) => item.archived);
+	const searchActive = searchResult.filter((item) => !item.archived);
+	const searchArchived = searchResult.filter((item) => item.archived);
 
 	const handleAddNotes = (note) => {
 		setDatas((datas) => [...datas, note]);
@@ -40,9 +41,10 @@ const Body = ({ datas, setDatas, searchResult }) => {
 			<TabLayout
 				archivedNote={archivedNote}
 				activeNote={activeNote}
+				searchActive={searchActive}
+				searchArchived={searchArchived}
 				handleArchive={handleArchive}
 				deleteNotes={deleteNotes}
-				searchResult={searchResult}
 			/>
 		</div>
 	);

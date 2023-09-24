@@ -4,6 +4,7 @@ import Empty from "./Empty";
 import Header from "./header";
 
 const Tab = ({ note, deleteNotes, handleArchive, tab, container, searchResult, content }) => {
+	console.log(searchResult);
 	return (
 		<div className={tab}>
 			<Header>{content}</Header>
@@ -11,10 +12,8 @@ const Tab = ({ note, deleteNotes, handleArchive, tab, container, searchResult, c
 				<CardList
 					deleteNotes={deleteNotes}
 					handleArchive={handleArchive}
-					note={note}
-					// note={searchResult.length > 0 ? searchResult : note}
+					note={searchResult.length > 0 ? searchResult : note}
 					container={container}
-					searchResult={searchResult}
 				/>
 			) : (
 				<Empty />
