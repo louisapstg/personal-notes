@@ -8,9 +8,8 @@ const Form = ({ handleAddNotes }) => {
 	const titleCounter = 50 - char;
 
 	const handleTitle = (e) => {
-		const value = e.target.value;
 		if (char <= 49) {
-			setTitle(value);
+			setTitle(e.target.value);
 		}
 	};
 

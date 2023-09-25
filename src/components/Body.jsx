@@ -3,10 +3,10 @@ import Header from "./header";
 import Form from "./Form";
 import TabLayout from "./TabLayout.jsx";
 
-const Body = ({ datas, setDatas, searchResult }) => {
-	const archivedNote = datas.filter((item) => item.archived);
+const Body = ({ setDatas, searchResult }) => {
+	const archivedNote = searchResult.filter((item) => item.archived);
 
-	const activeNote = datas.filter((item) => !item.archived);
+	const activeNote = searchResult.filter((item) => !item.archived);
 
 	const handleAddNotes = (note) => {
 		setDatas((datas) => [...datas, note]);
@@ -28,7 +28,7 @@ const Body = ({ datas, setDatas, searchResult }) => {
 	};
 
 	const deleteNotes = (id) => {
-		const newNotes = datas.filter((item) => item.id !== id);
+		const newNotes = searchResult.filter((item) => item.id !== id);
 		setDatas(newNotes);
 	};
 	return (
@@ -42,7 +42,6 @@ const Body = ({ datas, setDatas, searchResult }) => {
 				activeNote={activeNote}
 				handleArchive={handleArchive}
 				deleteNotes={deleteNotes}
-				searchResult={searchResult}
 			/>
 		</div>
 	);

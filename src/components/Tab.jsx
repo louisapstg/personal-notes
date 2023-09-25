@@ -3,7 +3,7 @@ import CardList from "./CardList";
 import Empty from "./Empty";
 import Header from "./header";
 
-const Tab = ({ note, deleteNotes, handleArchive, tab, container, searchResult }) => {
+const Tab = ({ note, deleteNotes, handleArchive, tab, container }) => {
 	return (
 		<div className={tab}>
 			<Header>Catatan Aktif</Header>
@@ -14,7 +14,6 @@ const Tab = ({ note, deleteNotes, handleArchive, tab, container, searchResult })
 					note={note}
 					// note={searchResult.length > 0 ? searchResult : note}
 					container={container}
-					searchResult={searchResult}
 				/>
 			) : (
 				<Empty />

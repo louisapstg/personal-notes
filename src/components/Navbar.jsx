@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const Navbar = ({ handleSearchChange, search }) => {
+const Navbar = ({ keyword, setKeyword }) => {
 	return (
 		<div className="navbar">
 			<div className="title">
@@ -11,8 +11,8 @@ const Navbar = ({ handleSearchChange, search }) => {
 						type="text"
 						placeholder="Cari Catatan..."
 						name="search"
-						value={search}
-						onChange={handleSearchChange}
+						value={keyword}
+						onChange={(e) => setKeyword(e.target.value)}
 					/>
 				</form>
 			</div>
