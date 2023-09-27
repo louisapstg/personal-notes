@@ -7,3 +7,4 @@ Pembuatan aplikasi **Personal Notes** untuk menyelesaikan Proyek Akhir dari Kela
 -   Vite
 -   React
 -   use-debounce
+-   sweetalert2
