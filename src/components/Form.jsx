@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import Button from "./Button";
+import Swal from "sweetalert2";
+
 const Form = ({ handleAddNotes }) => {
 	const [title, setTitle] = useState("");
 	const [body, setBody] = useState("");
@@ -16,7 +18,8 @@ const Form = ({ handleAddNotes }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (!title || !body) return;
+		if (!title || !body)
+			Swal.fire({ icon: "error", title: "Input Kosong", text: "Mohon Isi kedua input" });
 		const id = crypto.randomUUID();
 		const newData = {
 			id,
